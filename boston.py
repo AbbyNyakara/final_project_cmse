@@ -9,11 +9,15 @@ from bio import biopage
 from exploratory import explore
 from intro import intro
 from eda import home_price, employment_dist, rooms
+from eda2 import dist_pol, income_popl, rooms_value
+from analysis import river_homes, available_budget
+from predict import estimate
 
 # Setup the page: 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-tab1, tab2, tab3, tab4, tab5 = st.tabs(
-   ["Introduction", "Bio", "Data", "EDA-Part1", "EDA-Part2"]
+st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+   ["Introduction", "Bio", "Data", "EDA-Part1", "EDA-Part2", "Interactive Analysis", "Estimate"]
    )
 
 with tab1:
@@ -30,3 +34,14 @@ with tab4:
    st.pyplot(rooms())
    employment_dist()
 
+with tab5:
+   st.pyplot(dist_pol())
+   st.pyplot(income_popl())
+   st.pyplot(rooms_value())
+
+with tab6:
+   river_homes()
+   available_budget()
+
+with tab7:
+   estimate()
