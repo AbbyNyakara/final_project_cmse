@@ -10,32 +10,32 @@ from predict import estimate
 # Setup the page: 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
-   ["Introduction", "Bio", "Data", "EDA-Part1", "EDA-Part2", "Interactive Analysis", "Estimate"]
-   )
+# tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(
+#    ["Introduction", "Bio", "Data", "EDA-Part1", "EDA-Part2", "Interactive Analysis", "Estimate"]
+#    )
 
-with tab1:
+# Create tabs in the sidebar
+with st.sidebar:
+    st.title("Navigation")
+    tab_selected = st.radio("Select Tab", ["Intro", "Biopage", "Data", "EDA-Part1", "EDA-Part2", "Interactive Analysis", "Estimate"])
+
+# Display content based on selected tab
+if tab_selected == "Intro":
     intro()
-
-with tab2: 
-   biopage()
-
-with tab3:
-   explore()
-
-with tab4:
-   home_price()
-   st.pyplot(rooms())
-   employment_dist()
-
-with tab5:
-   st.pyplot(dist_pol())
-   st.pyplot(income_popl())
-   st.pyplot(rooms_value())
-
-with tab6:
-   river_homes()
-   available_budget()
-
-with tab7:
-   estimate()
+elif tab_selected == "Biopage":
+    biopage()
+elif tab_selected == "Data":
+    explore()
+elif tab_selected == "EDA-Part1":
+    home_price()
+    st.pyplot(rooms())
+    employment_dist()
+elif tab_selected == "EDA-Part2":
+    st.pyplot(dist_pol())
+    st.pyplot(income_popl())
+    st.pyplot(rooms_value())
+elif tab_selected == "Interactive Analysis":
+    river_homes()
+    available_budget()
+elif tab_selected == "Estimate":
+    estimate()

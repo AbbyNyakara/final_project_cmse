@@ -69,9 +69,9 @@ def estimate():
             ("False","True"),
         )
     with col2:
-        option2 = st.number_input("Enter the number of rooms", value=1)
+        option2 = st.number_input("Number of rooms", value=1)
     with col3:
-        option3 = st.number_input("Students in classroom", value=1)
+        option3 = st.number_input("Students/classroom", value=1)
     with col4:
         option4 = st.number_input("Distance from town", value=1)
     with col5:
