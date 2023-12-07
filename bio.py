@@ -1,28 +1,21 @@
 import streamlit as st
 from PIL import Image, ImageOps
 
-image1 = Image.open('img1.jpg')
 image2 = Image.open('img2.jpg')
-image3 = Image.open('img3.jpg')
-image1 = ImageOps.exif_transpose(image1)
 image2 = ImageOps.exif_transpose(image2)
-image3 = ImageOps.exif_transpose(image3)
 
 def biopage():
-    st.subheader("About Me:")
+    st.subheader("Bio Page")
     col1, col2 = st.columns(2)
     with col1:
-        st.image(image3, caption="Big brother")
-        st.image(image1, caption="Orchestra days")
+        st.image(image2)
     with col2:
         
         st.markdown(
             '''
             **About Me 🤔**
 
-            It depends on who you ask, really. To some, I am a sister, to others, a talented violinist; to some, just a broke college student.
-             
-            One thing for sure, I am the developer of this application. Currently, I'm a data science student at Michigan State University, enthusiastic about unraveling the intricacies of the data science world.
+            Currently, I'm a data science student at Michigan State University, enthusiastic about unraveling the intricacies of the data science world.
 
             **Skills 💡**:
 
@@ -40,7 +33,7 @@ def biopage():
 
             **Contacts 📧**
 
-            Feel free to reach out to me at mogusuab@msu.edu. Especially if you are hiring
+            Feel free to reach out to me at mogusuab@msu.edu
 
             **Hobbies 🎻**
 

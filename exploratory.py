@@ -4,11 +4,19 @@ import pandas as pd
 data = pd.read_csv("boston.csv")
 
 def explore():
-    st.write(data.head())
+    st.header("About the Data")
+    st.markdown(
+        """
+            - The data was sourced from [This website](https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html)
+            - This dataset contains information collected by the U.S Census Service concerning housing in the area of Boston Mass.
+        """
+    )
+    with st.expander("SEE SAMPLE DATA"):
+        st.write(data.head())
     st.markdown(
         '''
-         # Understanding the dataset  
-            Attribute Information (in order):
+         ### Understanding the dataset  
+            Attribute Information:
                     
             1. CRIM     per capita crime rate by town
             2. ZN       proportion of residential land zoned for lots over 25,000 sq.ft.

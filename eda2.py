@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("boston.csv")
 
 def dist_pol():
-    st.subheader("1.Relationship between the distance and pollution")
+    st.subheader("1.How the distance of a home from a city center and the pollution rates relate.")
     with sns.axes_style('darkgrid'):
         sns.jointplot(x=data['DIS'], 
-                        y=data['NOX'], 
+                        y=data['NOX'],
                         height=8, 
                         kind='scatter',
                         color='deeppink', 
@@ -54,7 +54,7 @@ def rooms_value():
     """
     How the number of rooms affects home value
     """
-    st.subheader("3.How the number of rooms affects home value")
+    st.write("Having established the average number of rooms in a house,  do more expensive houses have more rooms?")
     with sns.axes_style('whitegrid'):
         sns.jointplot(x=data.RM, 
                         y=data.PRICE, 
@@ -66,6 +66,7 @@ def rooms_value():
         """
         - Again, we see those homes at the $50,000 mark all lined up at the top of the chart. 
         - Perhaps there was some sort of cap or maximum value imposed during data collection. 
-        - However, the general pattern is, the 
+        - However, the general pattern is, the more expensive homes have more rooms. 
+        - However, for a home that is say $50000, you can get as very little as 5 rooms all the way to 9 rooms.
         """
     )

@@ -9,10 +9,10 @@ import numpy as np
 data = pd.read_csv("boston.csv")
 
 def rooms():
-    st.subheader("2. Number of homes")
-    sns.displot(data.RM, 
+    st.subheader("2. Number of Rooms - Averagely")
+    sns.displot(data.RM,
             aspect=2,
-            kde=True, 
+            kde=True,
             color='#00796b')
 
     plt.title(f'Distribution of Rooms in Boston. Average: {data.RM.mean():.2}')
@@ -23,8 +23,14 @@ def rooms():
     st.write("On average, each house has about 6 rooms")
 
 def home_price():
+    st.header("Exploratory Data Analysis")
     st.subheader("1. Home price distribution")
-    
+    st.markdown(
+        """
+            - The graph displays the number of homes available at different prices.
+            - Note there is a spike in the number of homes at the very right tail at the $50,000 mark. 🤔
+        """
+    )
     # Creating a Plotly figure
     fig = px.histogram(data, x='PRICE', nbins=50, marginal='rug', color_discrete_sequence=['#203F8B'])
     
@@ -39,11 +45,9 @@ def home_price():
 
     st.plotly_chart(fig)
 
-    st.write("Note there is a spike in the number of homes at the very right tail at the $50,000 mark. 🤔")
-
 
 def employment_dist():
-    st.subheader("3. Number of homes in relation to employment centers")
+    st.subheader("3. Number of homes in relation to distance of employment centers")
 
     fig = px.histogram(data, x='DIS', nbins=50, marginal='rug', color_discrete_sequence=['#351c75'])
 
